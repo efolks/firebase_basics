@@ -4,6 +4,7 @@ import firebase from 'firebase';
 
 import Profile from './Profile';
 import PostsList from './PostsList';
+import config from './config/config';
 
 class Main extends Component {
   constructor() {
@@ -12,12 +13,6 @@ class Main extends Component {
   }
 
   initializeFirebase() {
-    const config = {
-      apiKey: "AIzaSyClpKDyBBTrMMItJN-v8UwnJHQzbiPepdA",
-      authDomain: "my-awesome-project1-3fbe0.firebaseapp.com",
-      databaseURL: "https://my-awesome-project1-3fbe0.firebaseio.com",
-      storageBucket: "my-awesome-project1-3fbe0.appspot.com",
-    };
     firebase.initializeApp(config);
   }
 

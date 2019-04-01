@@ -86,6 +86,31 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../data.js":
+/*!******************!*\
+  !*** ../data.js ***!
+  \******************/
+/*! exports provided: data */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "data", function() { return data; });
+const data = {
+  posts: [{
+    id: 1,
+    text: "Hey check me outttt"
+  }, {
+    id: 2,
+    text: "I love this song"
+  }, {
+    id: 3,
+    text: "Heyyyyy another post"
+  }]
+};
+
+/***/ }),
+
 /***/ "./node_modules/@firebase/app/dist/index.cjs.js":
 /*!******************************************************!*\
   !*** ./node_modules/@firebase/app/dist/index.cjs.js ***!
@@ -73353,6 +73378,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _NewPostForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NewPostForm */ "./src/client/NewPostForm.js");
 /* harmony import */ var _Post__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Post */ "./src/client/Post.js");
+/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../data */ "../data.js");
+
 
 
 
@@ -73365,25 +73392,14 @@ function PostsList({
     id: "posts"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NewPostForm__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Ash's posts:"), posts.map(post => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Post__WEBPACK_IMPORTED_MODULE_2__["default"], {
     key: post.id,
-    text: post.text,
-    altText: post.altText
+    text: post.text
   })));
 }
 
 class PostsListContainer extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor() {
     super();
-    this.state = {
-      posts: [{
-        id: 1,
-        text: "Hey check me outttt",
-        altText: "Here's some alt text"
-      }, {
-        id: 2,
-        text: "I love this song",
-        altText: "Here's some alt text"
-      }]
-    };
+    this.state = _data__WEBPACK_IMPORTED_MODULE_3__["data"];
   }
 
   render() {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import NewPostForm from './NewPostForm';
 import Post from './Post';
+import { data } from '../../../data';
 
 function PostsList({ posts }) {
   console.log("POSTS", posts)
@@ -13,7 +14,6 @@ function PostsList({ posts }) {
            <Post
              key={post.id}
              text={post.text}
-             altText={post.altText}
            />
           ))
       }
@@ -24,20 +24,7 @@ function PostsList({ posts }) {
 export default class PostsListContainer extends Component {
   constructor() {
     super();
-    this.state = {
-      posts: [
-        {
-          id: 1,
-          text: "Hey check me outttt",
-          altText: "Here's some alt text"
-        },
-        {
-          id: 2,
-          text: "I love this song",
-          altText: "Here's some alt text"
-        }
-      ]
-    }
+    this.state = data;
   }
 
   render() {

@@ -26,7 +26,7 @@ export default class NewPostForm extends Component {
     database.ref('posts/').push({
       text: this.state.postText
     });
-    console.log("DATABASE: ", database);
+    this.setState({postText: ''})
   }
 
   render() {

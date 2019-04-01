@@ -1,53 +1,47 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 import NewPostForm from './NewPostForm';
 import Post from './Post';
 
-import { fetchPosts } from './redux/actions';
-
 function PostsList({ posts }) {
+  console.log("POSTS", posts)
   return (
     <div id="posts">
       <NewPostForm />
       <h3>Ash's posts:</h3>
       {posts.map(post => (
-        <Post
-          key={post.id}
-          text={post.text}
-          altText={post.altText}
-        />
-      ))}
+           <Post
+             key={post.id}
+             text={post.text}
+             altText={post.altText}
+           />
+          ))
+      }
     </div>
   );
 }
 
-class PostsListContainer extends Component {
-  componentDidMount() {
-    this.props.fetchPosts();
+export default class PostsListContainer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      posts: [
+        {
+          id: 1,
+          text: "Hey check me outttt",
+          altText: "Here's some alt text"
+        },
+        {
+          id: 2,
+          text: "I love this song",
+          altText: "Here's some alt text"
+        }
+      ]
+    }
   }
 
   render() {
-    return <PostsList posts={this.props.posts} />;
+    console.log("STATEEE", this.state);
+    return <PostsList {...this.state} />;
   }
 }
-
-function mapStateToProps(state) {
-  return {
-    posts: state.posts,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchPosts: () => {
-      const thunk = fetchPosts();
-      dispatch(thunk);
-    }
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PostsListContainer);

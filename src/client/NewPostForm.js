@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { createPost } from './redux/actions';
 
-class NewPostForm extends Component {
+export default class NewPostForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,12 +20,6 @@ class NewPostForm extends Component {
 
   handleSubmit(submitEvent) {
     submitEvent.preventDefault();
-    this.props.createPost({
-      text: this.state.postText
-    });
-    this.setState({
-      postText: '',
-    });
   }
 
   render() {
@@ -46,16 +38,3 @@ class NewPostForm extends Component {
     );
   }
 }
-
-function mapDispatchToProps(dispatch) {
-  return {
-    createPost: post => {
-      dispatch(createPost(post));
-    },
-  };
-}
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(NewPostForm);

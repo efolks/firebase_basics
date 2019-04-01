@@ -17,6 +17,24 @@ Fork this & follow along!
       text: this.state.postText
     });
 
+4. Read new post updates in Firebase
+  - Add util to FOLDER! (this is a utility method I made)
+  const postRef = firebase.database().ref('posts/');
+    postRef.on('value', (snapshot) => {
+      const posts = transform(snapshot.val());
+      this.setState({posts});
+    });
+  - Good use of componentDidUnmount here!!!!
+
+5. New post to database with id inside of object
+  const newPostKey = database.ref().child('posts').push().key;
+    database.ref(`posts/${newPostKey}`).set({
+      text: this.state.postText,
+      id: newPostKey
+    });
+
+6. Add a delete button to Posts?
+7. Add an edit to posts?
 
 Further Reading:
 Scalability/Structure Your Database: https://firebase.google.com/docs/database/web/structure-data

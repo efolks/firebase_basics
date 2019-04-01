@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import NewPostForm from './NewPostForm';
 import Post from './Post';
-import { data } from '../../../data';
+import { data } from '../../data';
 
 function PostsList({ posts }) {
   console.log("POSTS", posts)

@@ -28071,35 +28071,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class Main extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     posts: [],
-  //   };
-  //   this.addPost = this.addPost.bind(this);
-  // }
-  // async componentDidMount() {
-  //   const responseFromServer = await axios.get('/api/posts');
-  //   const posts = responseFromServer.data;
-  //   this.setState({ posts });
-  // }
-  // async addPost({ postText }) {
-  //   const newPost = {
-  //     text: postText,
-  //     altText: postText,
-  //   };
-  //   const response = await axios.post('/api/posts', newPost);
-  //   const createdPost = response.data;
-  //   // this.state.posts.push(newPost);
-  //   // this.setState({
-  //   //   posts: [...this.state.posts, newPost]
-  //   // });
-  //   this.setState(prevState => {
-  //     return {
-  //       posts: [...prevState.posts, createdPost],
-  //     };
-  //   });
-  // }
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "flex-container"
@@ -28303,7 +28274,7 @@ function Profile() {
     alt: "Ash Ketchum"
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     id: "basic-info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Male"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "10 year old"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Kanto"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Fun facts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Male"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "10 years old"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Kanto"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Fun facts"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     id: "favorite-things"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Loves catching Pokemon"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Born May 22"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Likes the color dark green"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Top Pokemon trainer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Favorite Pokemon type is Grass")));
 }

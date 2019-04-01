@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 
 import NewPostForm from './NewPostForm';
 import Post from './Post';
-import { data } from '../../data';
+import firebase from 'firebase';
+import { transform } from './utils/utils';
 
-function PostsList({ posts }) {
-  console.log("POSTS", posts)
+function PostsList(posts) {
+  const postMap = transform(posts);
   return (
     <div id="posts">
       <NewPostForm />
       <h3>Ash's posts:</h3>
-      {posts.map(post => (
-           <Post
-             key={post.id}
-             text={post.text}
-           />
-          ))
+      {
+        postMap.map(post => (
+          <Post
+            key={post.id}
+            text={post.text}
+          />
+        ))
       }
     </div>
   );
@@ -24,11 +26,23 @@ function PostsList({ posts }) {
 export default class PostsListContainer extends Component {
   constructor() {
     super();
-    this.state = data;
+    this.state = {};
+    this.ref = firebase.database().ref('posts/')
+  }
+
+  componentDidMount() { // listener for updates
+    this.ref.on('value', (snapshot) => {
+      const posts = transform(snapshot.val());
+      this.setState({ posts });
+    });
+  }
+
+  componentWillUnmount() {
+    this.ref.off('value')
   }
 
   render() {
     console.log("STATEEE", this.state);
-    return <PostsList {...this.state} />;
+    return this.state.posts ? <PostsList {...this.state.posts} /> : <p>No available posts</p>;
   }
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import NewPostForm from './NewPostForm';
 import Post from './Post';
-import { data } from '../../data';
 import firebase from 'firebase';
 import { transform } from './utils/utils';
 

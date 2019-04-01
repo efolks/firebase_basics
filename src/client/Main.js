@@ -9,7 +9,6 @@ import config from './config/config';
 class Main extends Component {
   constructor() {
     super();
-    this.initializeFirebase = this.initializeFirebase.bind(this);
   }
 
   initializeFirebase() {
@@ -18,7 +17,6 @@ class Main extends Component {
 
   render() {
     this.initializeFirebase();
-    console.log("FIREBASE: ", firebase);
     return (
       <div className="flex-container">
         <Profile />

@@ -23,8 +23,10 @@ export default class NewPostForm extends Component {
     submitEvent.preventDefault();
     // write to our firebase
     const database = firebase.database();
-    database.ref('posts/').push({
-      text: this.state.postText
+    const newPostKey = database.ref().child('posts').push().key;
+    database.ref(`posts/${newPostKey}`).set({
+      text: this.state.postText,
+      id: newPostKey
     });
     this.setState({postText: ''})
   }

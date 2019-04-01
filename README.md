@@ -6,8 +6,6 @@ Fork this & follow along!
   - Get config info from FB & put inside of config
   - Explain importance of what NoSQL is
   - Why use Firebase RealTime Database?
-  - What are sockets?
-  - Socket.io vs. Firebase
 
 2. Initial setup: https://firebase.google.com/docs/web/setup
 
@@ -36,6 +34,11 @@ Fork this & follow along!
 6. Add a delete button to Posts?
 7. Add an edit to posts?
 
+Mention off in componentDidUnmount()
+
+We could put this into a store to handle reducing or subscribe directly from the components
+
 Further Reading:
+What is a NoSQL database?: https://www.youtube.com/watch?v=v_hR4K4auoQ
 Scalability/Structure Your Database: https://firebase.google.com/docs/database/web/structure-data
 Read & Write Data: https://firebase.google.com/docs/database/web/read-and-write

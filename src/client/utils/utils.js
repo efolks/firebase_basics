@@ -1,8 +1,8 @@
 export const transform = (value) => { // turn object to string[]
-  let newShit = [];
+  let objectToArray = [];
   if (value != null) {
     const keys = Object.keys(value);
-    newShit = keys.map(k => value[k]);
+    objectToArray = keys.map(k => value[k]);
   }
-  return newShit;
+  return objectToArray;
 }
